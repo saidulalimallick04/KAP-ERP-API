@@ -1,0 +1,1483 @@
+{
+	"info": {
+		"_postman_id": "726fc029-369e-410a-9d77-915e0a640e71",
+		"name": "KPA_API_Developed_by_Saidul",
+		"description": "**Backend API Development**\n\nAssignment task from Sarva Suvidhan Pvt. Ltd\n\n- `baseURL =` [<code>http://127.0.0.1:8000</code>](http://127.0.0.1:8000)\n    \n\n1. **Assumptions**\n    \n    1. Every **formNumber** always **Unique**.\n        \n    2. I used **Token** based authentication.\n        \n        1. suggestion : if you run this to your machine you should give that Token(access_token) get from Login/new Sign Up.\n            \n    3. During GET request 3 specific parameters \\[if any new we have to modify\\].\n        \n    4. Front-end Provide Username everytime \\[submittedBy, inspectionBy\\]\n        \n        1. suggestion : Backend can handle this form Authorized User Token/any else.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46697016",
+		"_collection_link": "https://saidulalimallick.postman.co/workspace/Interanshala-Assignment-01~e9243a63-b8fa-4032-92be-30fa240f00e9/collection/46697016-726fc029-369e-410a-9d77-915e0a640e71?action=share&source=collection_link&creator=46697016"
+	},
+	"item": [
+		{
+			"name": "Authentication APIs",
+			"item": [
+				{
+					"name": "User Register API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\" : \"iamsami@gmail.com\",\r\n    \"user_type\": \"Server Admin\",\r\n    \"phone_number\": \"8900024603\",\r\n    \"whatsapp_number\": \"8900024603\",\r\n    \"first_name\": \"Sami\",\r\n    \"last_name\": \"M\",\r\n    \"password\" : \"2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register",
+								""
+							]
+						},
+						"description": "Registration API\n\n- Assume that frontend send data fields are -\n    \n    - \"email\"\n        \n    - \"user_type\"\n        \n    - \"phone_number\"\n        \n    - \"whatsapp_number\"\n        \n    - \"first_name\"\n        \n    - \"last_name\"\n        \n    - \"password\""
+					},
+					"response": [
+						{
+							"name": "Supriya K(Inspection Officer)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"email\" : \"iamsupriya@gmail.com\",\r\n    \"user_type\": \"Inspection Officer\",\r\n    \"phone_number\": \"9876543210\",\r\n    \"whatsapp_number\": \"9876543210\",\r\n    \"first_name\": \"Supriya\",\r\n    \"last_name\": \"K\",\r\n    \"password\" : \"3333\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/register/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 13:32:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"Supriya_9876543210_\",\n    \"user_type\": \"Inspection Officer\",\n    \"phone_number\": \"9876543210\",\n    \"whatsapp_number\": \"9876543210\",\n    \"first_name\": \"Supriya\",\n    \"middle_name\": \"\",\n    \"last_name\": \"K\",\n    \"email\": \"iamsupriya@gmail.com\",\n    \"created_at\": \"2025-07-24T13:32:38.727787Z\",\n    \"secondary_phone\": \"\",\n    \"access_token\": \"73cd14ce2aae0dcce54c85a47ca48f9422d2a66f\"\n}"
+						},
+						{
+							"name": "Sami M(Server Admin)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"email\" : \"iamsami@gmail.com\",\r\n    \"user_type\": \"Server Admin\",\r\n    \"phone_number\": \"8900024603\",\r\n    \"whatsapp_number\": \"8900024603\",\r\n    \"first_name\": \"Sami\",\r\n    \"last_name\": \"M\",\r\n    \"password\" : \"2222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/register/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 13:34:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"Sami_8900024603_\",\n    \"user_type\": \"Server Admin\",\n    \"phone_number\": \"8900024603\",\n    \"whatsapp_number\": \"8900024603\",\n    \"first_name\": \"Sami\",\n    \"middle_name\": \"\",\n    \"last_name\": \"M\",\n    \"email\": \"iamsami@gmail.com\",\n    \"created_at\": \"2025-07-24T13:34:36.115816Z\",\n    \"secondary_phone\": \"\",\n    \"access_token\": \"0f7e3866ce2ae86f1d6c45a5ee2e6bf6f49c84df\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\" : \"9876543210\",\r\n    \"password\" : \"3333\"\r\n}\r\n// For Supriya(Inspection Office)",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/login/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login",
+								""
+							]
+						},
+						"description": "Login API\n\n- Login Credentials\n    \n    - \"phone\"\n        \n    - \"password\""
+					},
+					"response": [
+						{
+							"name": "200 - OK[Login - Sami M(Server Admin)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\" : \"8900024603\",\r\n    \"password\" : \"2222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/login/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 13:35:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"Sami_8900024603_\",\n    \"user_type\": \"Server Admin\",\n    \"phone_number\": \"8900024603\",\n    \"whatsapp_number\": \"8900024603\",\n    \"first_name\": \"Sami\",\n    \"middle_name\": \"\",\n    \"last_name\": \"M\",\n    \"email\": \"iamsami@gmail.com\",\n    \"created_at\": \"2025-07-24T13:34:36.115816Z\",\n    \"secondary_phone\": \"\",\n    \"access_token\": \"0f7e3866ce2ae86f1d6c45a5ee2e6bf6f49c84df\"\n}"
+						},
+						{
+							"name": "200 - OK [Login - Supriya K(Inspection Officer)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\" : \"9876543210\",\r\n    \"password\" : \"3333\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/login/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 13:36:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"Supriya_9876543210_\",\n    \"user_type\": \"Inspection Officer\",\n    \"phone_number\": \"9876543210\",\n    \"whatsapp_number\": \"9876543210\",\n    \"first_name\": \"Supriya\",\n    \"middle_name\": \"\",\n    \"last_name\": \"K\",\n    \"email\": \"iamsupriya@gmail.com\",\n    \"created_at\": \"2025-07-24T13:32:38.727787Z\",\n    \"secondary_phone\": \"\",\n    \"access_token\": \"73cd14ce2aae0dcce54c85a47ca48f9422d2a66f\"\n}"
+						}
+					]
+				}
+			],
+			"description": "This Folder carries those API - endpoints which are helpful for User Authetication."
+		},
+		{
+			"name": "FORM POST APIs",
+			"item": [
+				{
+					"name": "POST Wheel Specifications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"formNumber\": \"WHEEL-2025-002\",\r\n  \"submittedBy\": \"Supriya_9876543210_\",\r\n  \"submittedDate\": \"2025-07-24\",\r\n  \"fields\": {\r\n    \"treadDiameterNew\": \"915 (900-1000)\",\r\n    \"lastShopIssueSize\": \"837 (800-900)\",\r\n    \"condemningDia\": \"825 (800-900)\",\r\n    \"wheelGauge\": \"1600 (+2,-1)\",\r\n    \"variationSameAxle\": \"0.5\",\r\n    \"variationSameBogie\": \"5\",\r\n    \"variationSameCoach\": \"13\",\r\n    \"wheelProfile\": \"29.4 Flange Thickness\",\r\n    \"intermediateWWP\": \"20 TO 28\",\r\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\r\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\r\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\r\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\r\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\r\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/forms/wheel-specifications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							]
+						},
+						"description": "Wheel Specifications Submit Form API\n\n- Assume - Every Data Fields are required\\[If not we should edit logic\\]"
+					},
+					"response": [
+						{
+							"name": "201 - Created[WHEEL-2025-001(Supriya_9876543210_)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"WHEEL-2025-001\",\r\n  \"submittedBy\": \"Supriya_9876543210_\",\r\n  \"submittedDate\": \"2025-07-24\",\r\n  \"fields\": {\r\n    \"treadDiameterNew\": \"915 (900-1000)\",\r\n    \"lastShopIssueSize\": \"837 (800-900)\",\r\n    \"condemningDia\": \"825 (800-900)\",\r\n    \"wheelGauge\": \"1600 (+2,-1)\",\r\n    \"variationSameAxle\": \"0.5\",\r\n    \"variationSameBogie\": \"5\",\r\n    \"variationSameCoach\": \"13\",\r\n    \"wheelProfile\": \"29.4 Flange Thickness\",\r\n    \"intermediateWWP\": \"20 TO 28\",\r\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\r\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\r\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\r\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\r\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\r\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/wheel-specifications",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"wheel-specifications"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 16:29:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Wheel specification submitted successfully.\",\n    \"data\": {\n        \"formNumber\": \"WHEEL-2025-001\",\n        \"submittedBy\": \"Supriya_9876543210_\",\n        \"submittedDate\": \"2025-07-24\",\n        \"status\": \"saved\"\n    }\n}"
+						},
+						{
+							"name": "201 - Created[WHEEL-2025-002(Supriya_9876543210_)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"WHEEL-2025-002\",\r\n  \"submittedBy\": \"Supriya_9876543210_\",\r\n  \"submittedDate\": \"2025-07-24\",\r\n  \"fields\": {\r\n    \"treadDiameterNew\": \"915 (900-1000)\",\r\n    \"lastShopIssueSize\": \"837 (800-900)\",\r\n    \"condemningDia\": \"825 (800-900)\",\r\n    \"wheelGauge\": \"1600 (+2,-1)\",\r\n    \"variationSameAxle\": \"0.5\",\r\n    \"variationSameBogie\": \"5\",\r\n    \"variationSameCoach\": \"13\",\r\n    \"wheelProfile\": \"29.4 Flange Thickness\",\r\n    \"intermediateWWP\": \"20 TO 28\",\r\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\r\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\r\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\r\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\r\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\r\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/wheel-specifications",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"wheel-specifications"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 16:32:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Wheel specification submitted successfully.\",\n    \"data\": {\n        \"formNumber\": \"WHEEL-2025-002\",\n        \"submittedBy\": \"Supriya_9876543210_\",\n        \"submittedDate\": \"2025-07-24\",\n        \"status\": \"saved\"\n    }\n}"
+						},
+						{
+							"name": "208 - Already Reported [Form Number Should Be Unique]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"WHEEL-2025-002\",\r\n  \"submittedBy\": \"Supriya_9876543210_\",\r\n  \"submittedDate\": \"2025-07-24\",\r\n  \"fields\": {\r\n    \"treadDiameterNew\": \"915 (900-1000)\",\r\n    \"lastShopIssueSize\": \"837 (800-900)\",\r\n    \"condemningDia\": \"825 (800-900)\",\r\n    \"wheelGauge\": \"1600 (+2,-1)\",\r\n    \"variationSameAxle\": \"0.5\",\r\n    \"variationSameBogie\": \"5\",\r\n    \"variationSameCoach\": \"13\",\r\n    \"wheelProfile\": \"29.4 Flange Thickness\",\r\n    \"intermediateWWP\": \"20 TO 28\",\r\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\r\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\r\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\r\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\r\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\r\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/wheel-specifications",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"wheel-specifications"
+									]
+								}
+							},
+							"status": "Already Reported",
+							"code": 208,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 14:23:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"formNumber already Exist.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "POST Bogie Check Sheet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"formNumber\": \"BOGIE-2025-002\",\r\n  \"inspectionBy\": \"Supriya_9876543210_\",\r\n  \"inspectionDate\": \"2025-07-24\",\r\n  \"bogieDetails\": {\r\n    \"bogieNo\": \"BG9813\",\r\n    \"makerYearBuilt\": \"RDSO/2018\",\r\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\r\n    \"deficitComponents\": \"None\",\r\n    \"dateOfIOH\": \"2025-07-02\"\r\n  },\r\n  \"bogieChecksheet\": {\r\n    \"bogieFrameCondition\": \"Good\",\r\n    \"bolster\": \"Good\",\r\n    \"bolsterSuspensionBracket\": \"Cracked\",\r\n    \"lowerSpringSeat\": \"Good\",\r\n    \"axleGuide\": \"Worn\"\r\n  },\r\n  \"bmbcChecksheet\": {\r\n    \"cylinderBody\": \"WORN OUT\",\r\n    \"pistonTrunnion\": \"GOOD\",\r\n    \"adjustingTube\": \"DAMAGED\",\r\n    \"plungerSpring\": \"GOOD\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/forms/bogie-checksheet",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"bogie-checksheet"
+							]
+						},
+						"description": "Bogie Checksheet Submit Form API\n\n- Assume - Every Data Fields are required\\[if not backend logic should be edited\\]"
+					},
+					"response": [
+						{
+							"name": "201 - Created[BOGIE-2025-001(Supriya_9876543210_)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"BOGIE-2025-001\",\r\n  \"inspectionBy\": \"Supriya_9876543210_\",\r\n  \"inspectionDate\": \"2025-07-24\",\r\n  \"bogieDetails\": {\r\n    \"bogieNo\": \"BG9813\",\r\n    \"makerYearBuilt\": \"RDSO/2018\",\r\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\r\n    \"deficitComponents\": \"None\",\r\n    \"dateOfIOH\": \"2025-07-02\"\r\n  },\r\n  \"bogieChecksheet\": {\r\n    \"bogieFrameCondition\": \"Good\",\r\n    \"bolster\": \"Good\",\r\n    \"bolsterSuspensionBracket\": \"Cracked\",\r\n    \"lowerSpringSeat\": \"Good\",\r\n    \"axleGuide\": \"Worn\"\r\n  },\r\n  \"bmbcChecksheet\": {\r\n    \"cylinderBody\": \"WORN OUT\",\r\n    \"pistonTrunnion\": \"GOOD\",\r\n    \"adjustingTube\": \"DAMAGED\",\r\n    \"plungerSpring\": \"GOOD\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/bogie-checksheet",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"bogie-checksheet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 16:40:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Bogie checksheet submitted successfully.\",\n    \"resultResponce\": {\n        \"formNumber\": \"BOGIE-2025-001\",\n        \"inspectionBy\": \"Supriya_9876543210_\",\n        \"inspectionDate\": \"2025-07-24\",\n        \"status\": \"saved\"\n    }\n}"
+						},
+						{
+							"name": "401 Unauthorized [Failed (No Token)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"BOGIE-2025-001\",\r\n  \"inspectionBy\": \"Supriya_9876543210_\",\r\n  \"inspectionDate\": \"2025-07-24\",\r\n  \"bogieDetails\": {\r\n    \"bogieNo\": \"BG1234\",\r\n    \"makerYearBuilt\": \"RDSO/2018\",\r\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\r\n    \"deficitComponents\": \"None\",\r\n    \"dateOfIOH\": \"2025-07-01\"\r\n  },\r\n  \"bogieChecksheet\": {\r\n    \"bogieFrameCondition\": \"Good\",\r\n    \"bolster\": \"Good\",\r\n    \"bolsterSuspensionBracket\": \"Cracked\",\r\n    \"lowerSpringSeat\": \"Good\",\r\n    \"axleGuide\": \"Worn\"\r\n  },\r\n  \"bmbcChecksheet\": {\r\n    \"cylinderBody\": \"WORN OUT\",\r\n    \"pistonTrunnion\": \"GOOD\",\r\n    \"adjustingTube\": \"DAMAGED\",\r\n    \"plungerSpring\": \"GOOD\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/bogie-checksheet",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"bogie-checksheet"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 14:19:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "201 - Created[BOGIE-2025-002(Supriya_9876543210_)]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"formNumber\": \"BOGIE-2025-002\",\r\n  \"inspectionBy\": \"Supriya_9876543210_\",\r\n  \"inspectionDate\": \"2025-07-24\",\r\n  \"bogieDetails\": {\r\n    \"bogieNo\": \"BG9813\",\r\n    \"makerYearBuilt\": \"RDSO/2018\",\r\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\r\n    \"deficitComponents\": \"None\",\r\n    \"dateOfIOH\": \"2025-07-02\"\r\n  },\r\n  \"bogieChecksheet\": {\r\n    \"bogieFrameCondition\": \"Good\",\r\n    \"bolster\": \"Good\",\r\n    \"bolsterSuspensionBracket\": \"Cracked\",\r\n    \"lowerSpringSeat\": \"Good\",\r\n    \"axleGuide\": \"Worn\"\r\n  },\r\n  \"bmbcChecksheet\": {\r\n    \"cylinderBody\": \"WORN OUT\",\r\n    \"pistonTrunnion\": \"GOOD\",\r\n    \"adjustingTube\": \"DAMAGED\",\r\n    \"plungerSpring\": \"GOOD\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/forms/bogie-checksheet",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"bogie-checksheet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 16:42:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Bogie checksheet submitted successfully.\",\n    \"resultResponce\": {\n        \"formNumber\": \"BOGIE-2025-002\",\n        \"inspectionBy\": \"Supriya_9876543210_\",\n        \"inspectionDate\": \"2025-07-24\",\n        \"status\": \"saved\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Authentication Method :- Token Based Authentication\n\n- Header Contain\n    \n    - Authorization : Token"
+		},
+		{
+			"name": "Data GET APIs",
+			"item": [
+				{
+					"name": "GET Requested User Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 0f7e3866ce2ae86f1d6c45a5ee2e6bf6f49c84df",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/users/profile/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Fetch Profile] Supriya K",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/users/profile/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 14:46:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"Supriya_9876543210_\",\n    \"user_type\": \"Inspection Officer\",\n    \"phone_number\": \"9876543210\",\n    \"whatsapp_number\": \"9876543210\",\n    \"first_name\": \"Supriya\",\n    \"middle_name\": \"\",\n    \"last_name\": \"K\",\n    \"email\": \"iamsupriya@gmail.com\",\n    \"created_at\": \"2025-07-24T13:32:38.727787Z\",\n    \"secondary_phone\": \"\"\n}"
+						},
+						{
+							"name": "[Fetch Profile] Sami M",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 0f7e3866ce2ae86f1d6c45a5ee2e6bf6f49c84df",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/users/profile/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 14:48:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"Sami_8900024603_\",\n    \"user_type\": \"Server Admin\",\n    \"phone_number\": \"8900024603\",\n    \"whatsapp_number\": \"8900024603\",\n    \"first_name\": \"Sami\",\n    \"middle_name\": \"\",\n    \"last_name\": \"M\",\n    \"email\": \"iamsami@gmail.com\",\n    \"created_at\": \"2025-07-24T13:34:36.115816Z\",\n    \"secondary_phone\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Wheel Specifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=Supriya_9876543210_&submittedDate=2025-07-24",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"wheel-specifications"
+							],
+							"query": [
+								{
+									"key": "formNumber",
+									"value": "WHEEL-2025-001"
+								},
+								{
+									"key": "submittedBy",
+									"value": "Supriya_9876543210_"
+								},
+								{
+									"key": "submittedDate",
+									"value": "2025-07-24"
+								}
+							]
+						},
+						"description": "Search Wheel Specifications API\n\n1. GET Wheel Specifications Data (based on 3 Parameter)\n    \n    1. Parameter_1 : formNumber\n        \n    2. Parameter_2 : submittedBy\n        \n    3. Parameter_3 : submittedDate"
+					},
+					"response": [
+						{
+							"name": "200 - Wheel Data Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=Supriya_9876543210_&submittedDate=2025-07-24",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"wheel-specifications"
+									],
+									"query": [
+										{
+											"key": "formNumber",
+											"value": "WHEEL-2025-001"
+										},
+										{
+											"key": "submittedBy",
+											"value": "Supriya_9876543210_"
+										},
+										{
+											"key": "submittedDate",
+											"value": "2025-07-24"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 16:57:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Filtered wheel specification forms fetched successfully.\",\n    \"data\": [\n        {\n            \"formNumber\": \"WHEEL-2025-001\",\n            \"submittedBy\": \"Supriya_9876543210_\",\n            \"submittedDate\": \"2025-07-24\",\n            \"fields\": {\n                \"treadDiameterNew\": \"915 (900-1000)\",\n                \"lastShopIssueSize\": \"837 (800-900)\",\n                \"condemningDia\": \"825 (800-900)\",\n                \"wheelGauge\": \"1600 (+2,-1)\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 Unauthorized Access(Invalid Token)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 4f91d94a0e575223b9199cf763ea482358cb461e",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=Supriya_9876543210_&submittedDate=2025-07-24",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"wheel-specifications"
+									],
+									"query": [
+										{
+											"key": "formNumber",
+											"value": "WHEEL-2025-001"
+										},
+										{
+											"key": "submittedBy",
+											"value": "Supriya_9876543210_"
+										},
+										{
+											"key": "submittedDate",
+											"value": "2025-07-24"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 14:24:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Invalid token.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Bogie Checksheet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/forms/bogie-checksheet?formNumber=BOGIE-2025-002&inspectionBy=Supriya_9876543210_&inspectionDate=2025-07-24",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"forms",
+								"bogie-checksheet"
+							],
+							"query": [
+								{
+									"key": "formNumber",
+									"value": "BOGIE-2025-002"
+								},
+								{
+									"key": "inspectionBy",
+									"value": "Supriya_9876543210_"
+								},
+								{
+									"key": "inspectionDate",
+									"value": "2025-07-24"
+								}
+							]
+						},
+						"description": "Search Bogie Checksheet API\n\n1. GET Bogie Checksheet Data (based on 3 Parameter)\n    \n    1. Parameter_1 : formNumber\n        \n    2. Parameter_2 : inspectionBy\n        \n    3. Parameter_3 : inspectionDate"
+					},
+					"response": [
+						{
+							"name": "200 - Bogie Checksheet Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 73cd14ce2aae0dcce54c85a47ca48f9422d2a66f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/forms/bogie-checksheet?formNumber=BOGIE-2025-002&inspectionBy=Supriya_9876543210_&inspectionDate=2025-07-24",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"forms",
+										"bogie-checksheet"
+									],
+									"query": [
+										{
+											"key": "formNumber",
+											"value": "BOGIE-2025-002"
+										},
+										{
+											"key": "inspectionBy",
+											"value": "Supriya_9876543210_"
+										},
+										{
+											"key": "inspectionDate",
+											"value": "2025-07-24"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 24 Jul 2025 17:00:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "639"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Filtered bogie checksheet forms fetched successfully.\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"formNumber\": \"BOGIE-2025-002\",\n            \"inspectionBy\": \"Supriya_9876543210_\",\n            \"inspectionDate\": \"2025-07-24\",\n            \"bogieDetails\": {\n                \"id\": 5,\n                \"bogieNo\": \"BG9813\",\n                \"makerYearBuilt\": \"RDSO/2018\",\n                \"incomingDivAndDate\": \"NR / 2025-06-25\",\n                \"deficitComponents\": \"None\",\n                \"dateOfIOH\": \"2025-07-02\"\n            },\n            \"bogieChecksheet\": {\n                \"id\": 5,\n                \"bogieFrameCondition\": \"Good\",\n                \"bolster\": \"Good\",\n                \"bolsterSuspensionBracket\": \"Cracked\",\n                \"lowerSpringSeat\": \"Good\",\n                \"axleGuide\": \"Worn\"\n            },\n            \"bmbcChecksheet\": {\n                \"id\": 5,\n                \"cylinderBody\": \"WORN OUT\",\n                \"pistonTrunnion\": \"GOOD\",\n                \"adjustingTube\": \"DAMAGED\",\n                \"plungerSpring\": \"GOOD\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder carries only **GET** _APIs._ GET APIs are use to get/fetch data mainly. In this folder you can see TWO GET API api-end points.\n\nAuthentication Method :- Token Based Authentication\n\n- Header Contain\n    \n    - Authorization : Token\n        \n\n1. GET Profile Infos\n    \n    1. header: Authorization : Token\n        \n2. GET Wheel Specifications Data (based on 3 Parameter)\n    \n    1. Parameter_1 : formNumber\n        \n    2. Parameter_2 : submittedBy\n        \n    3. Parameter_3 : submittedDate\n        \n3. GET Bogie Checksheet Data (based on 3 Parameter)\n    \n    1. Parameter_1 : formNumber\n        \n    2. Parameter_2 : inspectionBy\n        \n    3. Parameter_3 : inspectionDate"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
