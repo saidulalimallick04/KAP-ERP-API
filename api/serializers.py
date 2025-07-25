@@ -8,7 +8,7 @@ from InspectionData.models import Wheel_Specification_Data
 from InspectionData.models import Bogie_Details_Data,Bogie_Check_Sheet_Data,BMBC_Check_Sheet_Data
 
 
-#--------------------------------------------------For Wheel Data--------------------------------------------------------------------
+#--------------------------------------------------For Wheel Data To Save--------------------------------------------------------------------
 class WheelDataFieldsSeralizers(serializers.ModelSerializer):
     
     class Meta:
@@ -25,7 +25,7 @@ class WheelSpecificationsFormSerializers(serializers.ModelSerializer):
         
 
 
-#-----------------------------------------------For Bogie Data-----------------------------------------------------------------------
+#-----------------------------------------------For Wheel Data To Fetch-----------------------------------------------------------------------
 class GET_WheelDataFieldsSeralizers(serializers.ModelSerializer):
     
     class Meta:
@@ -50,9 +50,9 @@ class POST_WheelResponceSerializers(serializers.ModelSerializer):
         fields = ["formNumber", "submittedBy", "submittedDate", "status"]
 
     def get_status(self,obj):
-        return "saved"
+        return "saved" # To return the status
 
-#-----------------------------------------------For Bogie Data-----------------------------------------------------------------------
+#-----------------------------------------------For Bogie Data To Save-----------------------------------------------------------------------
 class BogieDetailsSerializers(serializers.ModelSerializer):
     
     class Meta:
@@ -84,7 +84,7 @@ class BogieCheckSheetFormSerializers(serializers.ModelSerializer):
         model = Bogie_Check_Sheet_Form
         fields = '__all__'
 
-#-----------------------------------------------For Bogie Data-----------------------------------------------------------------------
+#-----------------------------------------------For Bogie Data To Fetch-----------------------------------------------------------------------
 
 # set depth for foreign table data
 class GET_BogieCheckSheetFormSerializers(serializers.ModelSerializer):
@@ -105,4 +105,4 @@ class POST_BogieResponceSerializers(serializers.ModelSerializer):
         fields = ["formNumber", "inspectionBy" ,"inspectionDate","status"]
 
     def get_status(self,obj):
-        return "saved"
+        return "saved" # To return the status

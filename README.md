@@ -169,10 +169,23 @@ pip install -r requirements.txt
 ```
 - Method: 02 [If You Have UV Package Manager]   <--------- It Use ```pyproject.toml```
 ```bash
-Uv sync
+uv sync
 ```
 ---
-3. Run the project:
+3. Database Migrations:
+
+- Method: 01
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+- Method: 02 [If You Have UV Package Manager]
+```bash
+uv run manage.py makemigrations
+uv run manage.py migrate
+```
+---
+4. Run the project:
 
 - Method: 01
 ```bash

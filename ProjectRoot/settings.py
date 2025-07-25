@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'Users'
 ]
 
+# Assume that Frontend and Backend are in two Different Origin
 CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
@@ -147,6 +148,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# For Token Base API Authentication
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
