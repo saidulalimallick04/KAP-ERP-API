@@ -203,13 +203,19 @@ uv run manage.py runserver
 
 To run this project, create a `.env` file in the root and add the following:
 
-```env
-DATABASE_ENGINE = <Secret_Here>
+```env 
 DATABASE_NAME = <Secret_Here>
 DATABASE_USER = <Secret_Here>
 DATABASE_PASSWORD = <Secret_Here>
 DATABASE_HOST = <Secret_Here>
 DATABASE_PORT = <Secret_Here>
+```
+``` env1 
+DATABASE_NAME = 'assignment_db'  <----------│
+DATABASE_USER = 'postgres'  <---------------│
+DATABASE_PASSWORD = '5555'  <---------------├──────> Eg. Test Conditions[Consider Accordingly]
+DATABASE_HOST = 'localhost'  <--------------│
+DATABASE_PORT = '5432'   <------------------│
 ```
 
 ---
