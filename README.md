@@ -7,7 +7,7 @@
 ## 🏜️ Visual Structure
 ```mermaid
 mindmap
-    root((Project Root<br/>**KPA ERP API**))
+    root((Project<br/>**KPA ERP API**))
         frontend((Frontend))
             KPA ERP FE
 
@@ -41,12 +41,12 @@ mindmap
 
 1. ✅ LOGIN Auth - POST
     - => ```baseURL/api/user/login```
-        - _description_ : Using two fields `phone` and `password` we can request for login to fetch one access_token.
+        - _description_ : Using two fields `phone` and `password` we can request for login to fetch one access_token and user data. 
 ---
 
 2. ✅ Create Account Auth - POST
     - => ```baseURL/api/user/register```
-        - _description_ : Using some fields like `phone_number`,`email`, `firstname`, `lastname`, `user_type` and `password` etc. we can request to create an account + access_token.
+        - _description_ : Using some fields like `phone_number`,`email`, `firstname`, `lastname`, `user_type` and `password` etc. we can request to create an account & access_token and user data.
 ---
 3. ✅ User Profile- Auth - GET
     - => ```baseURL/api/user/profile```
@@ -54,11 +54,11 @@ mindmap
 ---
 4. ✅ Bogie_Checksheet Fetch - GET 
     - => ```baseURL/api/forms/bogie-checksheet```
-        - _description_ : Using this API end-point user can fetch previously submitted `bogie checksheet for`m data.(**Header** - Token/any required for authentication)
+        - _description_ : Using this API end-point user can fetch previously submitted `bogie checksheet form` data using parameters.(**Header** - Token/any required for authentication)
 ---
 5. ✅ Wheel_Specifications Fetch - GET
     - => ```baseURL/api/forms/wheel-specifications```
-        - _description_ : Using this API end-point user can fetch previously submitted `Wheel Specification form` data.(**Header** - Token/any required for authentication)
+        - _description_ : Using this API end-point user can fetch previously submitted `Wheel Specification form` data using parameters.(**Header** - Token/any required for authentication)
 ---
 6. ✅ Bogie_Checksheet Create - POST 
     - => ```baseURL/api/forms/bogie-checksheet```
@@ -139,7 +139,7 @@ kpa-erp-api/
 │   ├── test.py
 │   └── views.py
 ├── manage.py   <--------------------------- Starting Point of the project.
-├── .env        <--------------------------- Projects Secrets
+├── .env        <--------------------------- Projects Secrets / You should add this file.
 ├── .gitignore
 ├── README.md
 ├── requirements.txt <-----------------│
@@ -156,8 +156,8 @@ kpa-erp-api/
 1. Clone the project:
 
 ```bash
-git clone "https://github.com/saidulalimallick04/kpa-erp-api.git"
-cd kpa-erp-api
+git clone "https://github.com/saidulalimallick04/KAP-ERP-API.git"
+cd KAP-ERP-API
 ```
 ---
 2. Install dependencies:
@@ -190,12 +190,12 @@ uv run manage.py runserver
 To run this project, create a `.env` file in the root and add the following:
 
 ```env
-DATABASE_ENGINE = _Secret Here_
-DATABASE_NAME = _Secret Here_
-DATABASE_USER = _Secret Here_
-DATABASE_PASSWORD = _Secret Here_
-DATABASE_HOST = _Secret Here_
-DATABASE_PORT = _Secret Here_
+DATABASE_ENGINE = <Secret_Here>
+DATABASE_NAME = <Secret_Here>
+DATABASE_USER = <Secret_Here>
+DATABASE_PASSWORD = <Secret_Here>
+DATABASE_HOST = <Secret_Here>
+DATABASE_PORT = <Secret_Here>
 ```
 
 ---
@@ -203,7 +203,7 @@ DATABASE_PORT = _Secret Here_
 
 ## 📦 Deployment
 
-- <Not_Necessary> [Its an assignmant task.]
+- <Not_Necessary> [It's an **assignmant** task.]
 
 ---
 ---
@@ -221,12 +221,10 @@ DATABASE_PORT = _Secret Here_
 
 |Profile                                                                                                   | Name                          | Role                                              | GitHub                                                             | LinkedIn                                                                                |
 |----------------------------------------------------------------------------------------------------------|-------------------------------|---------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| [![Sami](https://github.com/saidulalimallick04.png?size=75)](https://github.com/saidulalimallick04)      | Saidul Ali Mallick (Sami)     | Backend Developer, API developer & Tester         | [@saidulalimallick04](https://github.com/saidulalimallick04)       | [@saidulalimallick04](https://linkedin.com/in/saidulalimallick04)                       |
+| [![Sami](https://github.com/saidulalimallick04.png?size=100)](https://github.com/saidulalimallick04)      | Saidul Ali Mallick (Sami)     | Backend Developer, API developer & Tester         | [@saidulalimallick04](https://github.com/saidulalimallick04)       | [@saidulalimallick04](https://linkedin.com/in/saidulalimallick04)                       |
 
-> ❤️ I believe in building impact, not just writing code.
+- > ❤️ I believe in building impact, not just writing code.
 
 
 ---
 ---
-
-
